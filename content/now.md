@@ -16,4 +16,3 @@ Hiện tại đang...
 ---
 
 *Cập nhật: 2026-08-08*
-- Test edit từ Obsidian: 06:41:20Z
