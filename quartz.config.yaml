@@ -276,6 +276,16 @@ plugins:
     layout:
       position: header
       priority: 10
+  - source: ./.local-plugins/notes-ui-langswitch
+    enabled: true
+    options:
+      label: EN
+      labelFromVi: EN
+      labelFromEn: VI
+    order: 50
+    layout:
+      position: header
+      priority: 20
   - source: ./.local-plugins/notes-ui-logo
     enabled: true
     options:

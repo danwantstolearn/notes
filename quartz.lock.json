@@ -1,17 +1,23 @@
 {
   "version": "1.0.0",
   "plugins": {
+    "notes-ui-langswitch": {
+      "source": "./.local-plugins/notes-ui-langswitch",
+      "resolved": "/home/nemo/dev/notes/.local-plugins/notes-ui-langswitch",
+      "commit": "local",
+      "installedAt": "2026-08-08T04:03:11.523Z"
+    },
     "notes-ui-logo": {
       "source": "./.local-plugins/notes-ui-logo",
       "resolved": "/home/nemo/dev/notes/.local-plugins/notes-ui-logo",
       "commit": "local",
-      "installedAt": "2026-08-08T03:53:19.486Z"
+      "installedAt": "2026-08-08T03:53:51.930Z"
     },
     "notes-ui-navmenu": {
       "source": "./.local-plugins/notes-ui-navmenu",
       "resolved": "/home/nemo/dev/notes/.local-plugins/notes-ui-navmenu",
       "commit": "local",
-      "installedAt": "2026-08-08T03:53:19.485Z"
+      "installedAt": "2026-08-08T03:53:51.929Z"
     }
   }
 }
