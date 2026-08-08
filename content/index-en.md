@@ -1,9 +1,9 @@
 ---
-title: NQ Hai Dang
+title: Coffe?
 lang: en
 altLang: /
 ---
 
-# NQ Hai Dang Notes
+# Coffe?
 
-My digital garden. Content is being added gradually.
+Come sit here have fun.

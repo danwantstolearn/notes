@@ -1,9 +1,9 @@
 ---
-title: NQ Hai Dang
+title: Cafe?
 lang: vi
 altLang: /index-en
 ---
 
-# NQ Hai Dang Notes
+# Cafe?
 
-Digital garden của tao. Nội dung đang được thêm dần.
+Lại đây ngồi chơi.
