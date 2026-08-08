@@ -1,9 +1,9 @@
 ---
-title: The List
+title: Danh sách
 lang: vi
 altLang: /the-list-en
 ---
 
-# The List
+# Danh Sách
 
 Danh sách đang được cập nhật dần.

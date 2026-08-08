@@ -6,4 +6,4 @@ altLang: /index-en
 
 # Cafe?
 
-Lại đây ngồi chơi.
+Lại làm ly cafe ngồi chơi.
