@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: "NQ Hai Dang Notes"
+  pageTitle: NQ Hai Dang Notes
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
@@ -16,8 +16,8 @@ configuration:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      header: Schibsted Grotesk
-      body: Source Sans Pro
+      header: IBM Plex Sans
+      body: IBM Plex Sans
       code: IBM Plex Mono
     colors:
       lightMode:
@@ -131,7 +131,7 @@ plugins:
   - source: "@quartz-community/tag-page"
     enabled: true
   - source: "@quartz-community/explorer"
-    enabled: true
+    enabled: false
     layout:
       position: left
       priority: 50
@@ -169,7 +169,7 @@ plugins:
       position: beforeBody
       priority: 30
   - source: "@quartz-community/page-title"
-    enabled: true
+    enabled: false
     layout:
       position: left
       priority: 10
@@ -203,8 +203,8 @@ plugins:
     enabled: true
     options:
       links:
-        GitHub: https://github.com/jackyzha0/quartz
-        Discord Community: https://discord.gg/cRFFHYye7t
+        Instagram: https://www.instagram.com/danwantstolearn/
+        Email: danwantstolearn@proton.me
     layout:
       position: footer
       priority: 50
@@ -257,6 +257,36 @@ plugins:
       position: afterBody
       priority: 50
       display: all
+  - source: ./.local-plugins/notes-ui-navmenu
+    enabled: true
+    options:
+      links:
+        - label: Home
+          href: /
+        - label: Now
+          href: /now
+        - label: The List
+          href: /the-list
+        - label: Books
+          href: /books
+        - label: Recent
+          href: /recent
+      align: center
+    order: 50
+    layout:
+      position: header
+      priority: 10
+  - source: ./.local-plugins/notes-ui-logo
+    enabled: true
+    options:
+      src: /static/logo.png
+      alt: Dan Wants To Learn
+      href: /
+      height: 100
+    order: 50
+    layout:
+      position: left
+      priority: 5
 layout:
   groups:
     toolbar:
