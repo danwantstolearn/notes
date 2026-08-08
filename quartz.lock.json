@@ -1,6 +1,12 @@
 {
   "version": "1.0.0",
   "plugins": {
+    "notes-ui-breadcrumbs": {
+      "source": "./.local-plugins/notes-ui-breadcrumbs",
+      "resolved": "/home/nemo/dev/notes/.local-plugins/notes-ui-breadcrumbs",
+      "commit": "local",
+      "installedAt": "2026-08-08T04:16:02.203Z"
+    },
     "notes-ui-langswitch": {
       "source": "./.local-plugins/notes-ui-langswitch",
       "resolved": "/home/nemo/dev/notes/.local-plugins/notes-ui-langswitch",

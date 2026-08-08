@@ -12,6 +12,24 @@ export interface LogoOptions {
   alt?: string;
   href?: string;
   height?: number | string;
+  /** Bản EN của trang chủ (mặc định /index-en) */
+  homeEnHref?: string;
+}
+
+function detectLang(fileData: {
+  frontmatter?: Record<string, unknown>;
+  slug?: string;
+}): "vi" | "en" | "" {
+  const fm = (fileData.frontmatter ?? {}) as Record<string, unknown>;
+  if (typeof fm.lang === "string") {
+    const l = fm.lang.toLowerCase();
+    if (l === "en") return "en";
+    if (l === "vi") return "vi";
+  }
+  const slug = (fileData.slug ?? "").toLowerCase();
+  if (slug.endsWith(".en") || slug.endsWith("-en") || slug.includes("/en/")) return "en";
+  if (slug.endsWith(".vi") || slug.endsWith("-vi") || slug.includes("/vi/")) return "vi";
+  return "";
 }
 
 export default ((opts?: LogoOptions) => {
@@ -19,8 +37,12 @@ export default ((opts?: LogoOptions) => {
   const alt = opts?.alt ?? "";
   const href = opts?.href ?? "/";
   const height = opts?.height ?? 100;
+  const homeEnHref = opts?.homeEnHref ?? "/index-en";
 
-  const Logo: QuartzComponent = ({ displayClass }) => {
+  const Logo: QuartzComponent = ({ fileData, displayClass }) => {
+    const isEn = detectLang(fileData) === "en";
+    const linkHref = href === "/" && isEn ? homeEnHref : href;
+
     const img = (
       <img
         class="q-logo__img"
@@ -31,7 +53,7 @@ export default ((opts?: LogoOptions) => {
     );
     return (
       <div class={classNames(displayClass, "q-logo")}>
-        <a class="q-logo__link" href={href}>
+        <a class="q-logo__link" href={linkHref}>
           {img}
         </a>
       </div>

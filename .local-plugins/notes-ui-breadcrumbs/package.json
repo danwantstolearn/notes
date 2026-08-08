@@ -1,0 +1,67 @@
+{
+  "name": "notes-ui-breadcrumbs",
+  "version": "0.1.0",
+  "description": "Language-aware Breadcrumbs for NQ Hai Dang Notes",
+  "type": "module",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./components": {
+      "types": "./dist/components/index.d.ts",
+      "import": "./dist/components/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "preact": "^10.0.0"
+  },
+  "dependencies": {
+    "@quartz-community/types": "github:quartz-community/types"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "preact": "^10.28.2",
+    "sass": "^1.97.3",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3"
+  },
+  "quartz": {
+    "name": "notes-ui-breadcrumbs",
+    "displayName": "Breadcrumbs (language-aware)",
+    "category": "component",
+    "version": "1.0.0",
+    "quartzVersion": ">=5.0.0",
+    "dependencies": [],
+    "defaultOrder": 50,
+    "defaultEnabled": true,
+    "defaultOptions": {
+      "spacerSymbol": "❯",
+      "rootName": "Home",
+      "homeEnHref": "/index-en"
+    },
+    "components": {
+      "Breadcrumbs": {
+        "displayName": "Breadcrumbs",
+        "defaultPosition": "beforeBody",
+        "defaultPriority": 5
+      }
+    }
+  },
+  "allowScripts": {
+    "@parcel/watcher@2.6.0": true,
+    "esbuild@0.27.7": true
+  }
+}

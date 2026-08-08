@@ -186,7 +186,7 @@ plugins:
       priority: 35
       group: toolbar
   - source: "@quartz-community/breadcrumbs"
-    enabled: true
+    enabled: false
     layout:
       position: beforeBody
       priority: 5
@@ -296,6 +296,16 @@ plugins:
     order: 50
     layout:
       position: left
+      priority: 5
+  - source: ./.local-plugins/notes-ui-breadcrumbs
+    enabled: true
+    options:
+      spacerSymbol: ❯
+      rootName: Home
+      homeEnHref: /index-en
+    order: 50
+    layout:
+      position: beforeBody
       priority: 5
 layout:
   groups:

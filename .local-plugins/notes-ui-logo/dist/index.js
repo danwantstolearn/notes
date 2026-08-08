@@ -26,12 +26,27 @@ function u2(e2, t2, n2, o2, i2, u3) {
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
+function detectLang(fileData) {
+  const fm = fileData.frontmatter ?? {};
+  if (typeof fm.lang === "string") {
+    const l2 = fm.lang.toLowerCase();
+    if (l2 === "en") return "en";
+    if (l2 === "vi") return "vi";
+  }
+  const slug = (fileData.slug ?? "").toLowerCase();
+  if (slug.endsWith(".en") || slug.endsWith("-en") || slug.includes("/en/")) return "en";
+  if (slug.endsWith(".vi") || slug.endsWith("-vi") || slug.includes("/vi/")) return "vi";
+  return "";
+}
 var Logo_default = ((opts) => {
   const src = opts?.src ?? "/static/logo.png";
   const alt = opts?.alt ?? "";
   const href = opts?.href ?? "/";
   const height = opts?.height ?? 100;
-  const Logo = ({ displayClass }) => {
+  const homeEnHref = opts?.homeEnHref ?? "/index-en";
+  const Logo = ({ fileData, displayClass }) => {
+    const isEn = detectLang(fileData) === "en";
+    const linkHref = href === "/" && isEn ? homeEnHref : href;
     const img = /* @__PURE__ */ u2(
       "img",
       {
@@ -41,7 +56,7 @@ var Logo_default = ((opts) => {
         style: `height: ${typeof height === "number" ? `${height}px` : height};`
       }
     );
-    return /* @__PURE__ */ u2("div", { class: classNames(displayClass, "q-logo"), children: /* @__PURE__ */ u2("a", { class: "q-logo__link", href, children: img }) });
+    return /* @__PURE__ */ u2("div", { class: classNames(displayClass, "q-logo"), children: /* @__PURE__ */ u2("a", { class: "q-logo__link", href: linkHref, children: img }) });
   };
   Logo.css = `
     .q-logo { padding: 1rem 0; }

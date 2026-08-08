@@ -1,5 +1,7 @@
 ---
 title: NQ Hai Dang
+lang: vi
+altLang: /index-en
 ---
 
 # NQ Hai Dang Notes

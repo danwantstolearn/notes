@@ -26,11 +26,32 @@ function u2(e2, t2, n2, o2, i2, u3) {
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
+function detectLang(fileData) {
+  const fm = fileData.frontmatter ?? {};
+  if (typeof fm.lang === "string") {
+    const l2 = fm.lang.toLowerCase();
+    if (l2 === "en") return "en";
+    if (l2 === "vi") return "vi";
+  }
+  const slug = (fileData.slug ?? "").toLowerCase();
+  if (slug.endsWith(".en") || slug.endsWith("-en") || slug.includes("/en/")) return "en";
+  if (slug.endsWith(".vi") || slug.endsWith("-vi") || slug.includes("/vi/")) return "vi";
+  return "";
+}
+function toEnHref(href, homeEnHref) {
+  if (!href.startsWith("/")) return href;
+  if (href === "/") return homeEnHref;
+  if (href.endsWith("-en") || href.includes("-en/")) return href;
+  return href + "-en";
+}
 var NavMenu_default = ((opts) => {
   const links = opts?.links ?? [];
   const align = opts?.align ?? "left";
-  const NavMenu = ({ displayClass }) => {
-    return /* @__PURE__ */ u2("nav", { class: classNames(displayClass, `q-navmenu q-navmenu--${align}`), children: links.map((l2) => /* @__PURE__ */ u2("a", { class: "q-navmenu__link", href: l2.href, children: l2.label })) });
+  const homeEnHref = opts?.homeEnHref ?? "/index-en";
+  const NavMenu = ({ fileData, displayClass }) => {
+    const isEn = detectLang(fileData) === "en";
+    const hrefs = links.map((l2) => isEn ? toEnHref(l2.href, homeEnHref) : l2.href);
+    return /* @__PURE__ */ u2("nav", { class: classNames(displayClass, `q-navmenu q-navmenu--${align}`), children: links.map((l2, i2) => /* @__PURE__ */ u2("a", { class: "q-navmenu__link", href: hrefs[i2], children: l2.label })) });
   };
   NavMenu.css = `
     .q-navmenu { display:flex; gap:.5rem; flex-wrap:wrap; }

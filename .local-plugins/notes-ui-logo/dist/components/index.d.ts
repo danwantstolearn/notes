@@ -5,6 +5,8 @@ interface LogoOptions {
     alt?: string;
     href?: string;
     height?: number | string;
+    /** Bản EN của trang chủ (mặc định /index-en) */
+    homeEnHref?: string;
 }
 declare const _default: (opts?: LogoOptions) => QuartzComponent;
 
