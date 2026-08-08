@@ -6,4 +6,4 @@ altLang: /books-en
 
 # Books
 
-Sách đang được cập nhật dần.
+Đang cập nhật

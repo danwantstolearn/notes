@@ -6,4 +6,4 @@ altLang: /the-list
 
 # The List
 
-The list is being updated gradually.
+Maybe someday something will be here

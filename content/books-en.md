@@ -6,4 +6,4 @@ altLang: /books
 
 # Books
 
-Books are being added gradually.
+Maybe someday something will be here
