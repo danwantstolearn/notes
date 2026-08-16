@@ -31,6 +31,15 @@ export default (() => {
     const socialUrl =
       fileData.slug === "404" ? url.toString() : joinSegments(url.toString(), fileData.slug!)
 
+    // --- Multi-language: canonical + hreflang ---
+    // Dựa vào frontmatter `lang` (vi|en) + `altLang` (đường dẫn tuyệt đối bản dịch)
+    const fm = (fileData.frontmatter ?? {}) as Record<string, unknown>
+    const pageLang = typeof fm.lang === "string" ? fm.lang.toLowerCase() : ""
+    const altLang =
+      typeof fm.altLang === "string" && fm.altLang.startsWith("/") ? fm.altLang : undefined
+    const altUrl = altLang ? `https://${cfg.baseUrl}${altLang}` : undefined
+    const siteUrl = `https://${cfg.baseUrl}`
+
     const usesCustomOgImage = ctx.cfg.plugins.emitters.some((e) => e.name === "CustomOgImages")
     const ogImageDefaultPath = `https://${cfg.baseUrl}/static/og-image.png`
 
@@ -89,6 +98,14 @@ export default (() => {
           </>
         )}
 
+        <link rel="canonical" href={socialUrl} />
+        {pageLang && altLang && altUrl && (
+          <>
+            <link rel="alternate" hreflang={pageLang} href={socialUrl} />
+            <link rel="alternate" hreflang={pageLang === "vi" ? "en" : "vi"} href={altUrl} />
+            <link rel="alternate" hreflang="x-default" href={`${siteUrl}/`} />
+          </>
+        )}
         <link rel="icon" href={iconPath} />
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />

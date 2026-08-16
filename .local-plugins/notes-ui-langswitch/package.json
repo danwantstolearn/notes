@@ -48,7 +48,8 @@
     "defaultOrder": 50,
     "defaultEnabled": true,
     "defaultOptions": {
-      "label": "EN"
+      "label": "EN",
+      "missingBehavior": "disabled"
     },
     "components": {
       "LanguageSwitch": {

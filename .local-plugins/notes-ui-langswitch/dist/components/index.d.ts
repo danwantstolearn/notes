@@ -7,6 +7,12 @@ interface LanguageSwitchOptions {
     labelFromVi?: string;
     /** Nhãn khi trang hiện tại là tiếng Anh (mặc định "VI") */
     labelFromEn?: string;
+    /**
+     * Hành vi khi trang KHÔNG có bản dịch (thiếu altLang hoặc target không tồn tại):
+     * - "disabled": hiện nút mờ, không phải link, tooltip "chưa có bản dịch"
+     * - "hide": không render gì (hành vi cũ)
+     */
+    missingBehavior?: "disabled" | "hide";
 }
 declare const _default: (opts?: LanguageSwitchOptions) => QuartzComponent;
 
