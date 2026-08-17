@@ -1,6 +1,34 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+
+/* ===== Force dark theme — tắt toggle dark/light, dark là mặc định duy nhất ===== */
+/* Theme emit palette light ở :root, dark ở :root[saved-theme=dark]; script set
+   attribute đó nằm trong component darkmode (đã tắt) nên override thẳng vars */
+:root {
+  color-scheme: dark;
+  --light: #161618;
+  --lightgray: #393639;
+  --gray: #646464;
+  --darkgray: #d4d4d4;
+  --dark: #ebebec;
+  --secondary: #7b97aa;
+  --tertiary: #84a59d;
+  --highlight: rgba(143, 159, 169, 0.15);
+  --textHighlight: #b3aa0288;
+}
+
+/* ===== Progress bar (thẻ <progress> trong content) ===== */
+progress {
+  display: block;
+  width: min(420px, 100%);
+  height: 10px;
+  margin: 4px 0 14px;
+  accent-color: var(--secondary);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
 /* ===== Image grid — chống tràn ổn định ===== */
 :root { --grid-gap: 12px; --thumb-h: clamp(220px, 28vw, 360px); }
 

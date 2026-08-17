@@ -4,10 +4,12 @@ lang: en
 altLang: /now
 ---
 
-# Now
-
-Maybe someday something will be here
+## Books
+How to try again - Steve Kamb
+<progress value="30" max="100"></progress>
+Dune - Frank Herbert
+<progress value="100" max="100"></progress>
 
 ---
 
-*Updated: 2026-08-08*
+*Updated: 2026-08-17*

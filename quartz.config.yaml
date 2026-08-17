@@ -104,7 +104,7 @@ plugins:
     enabled: true
     options:
       theme: obsidian-nord
-      mode: both
+      mode: dark
   - source: "@quartz-community/remove-draft"
     enabled: true
   - source: "@quartz-community/explicit-publish"
@@ -174,13 +174,13 @@ plugins:
       position: left
       priority: 10
   - source: "@quartz-community/darkmode"
-    enabled: true
+    enabled: false
     layout:
       position: left
       priority: 30
       group: toolbar
   - source: "@quartz-community/reader-mode"
-    enabled: true
+    enabled: false
     layout:
       position: left
       priority: 35
@@ -271,7 +271,7 @@ plugins:
           href: /books
         - label: Recent
           href: /recent
-      align: center
+      align: left
     order: 50
     layout:
       position: header
@@ -284,8 +284,9 @@ plugins:
       labelFromEn: VI
     order: 50
     layout:
-      position: header
-      priority: 20
+      position: left
+      priority: 35
+      group: toolbar
   - source: ./.local-plugins/notes-ui-logo
     enabled: true
     options:

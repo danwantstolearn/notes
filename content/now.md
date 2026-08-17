@@ -1,12 +1,17 @@
 ---
-title: Now
+title: Hiện tại đang...
 lang: vi
 altLang: /now-en
 ---
+## 
 
-# Now
+## Sách
+How to try again - Steve Kamb
+<progress value="30" max="100"></progress>
+Hậu duệ xứ cát - Frank Herbert
+<progress value="100" max="100"></progress>
 
 
 ---
 
-*Cập nhật: 2026-08-08*
+*Cập nhật: 2026-08-17*
