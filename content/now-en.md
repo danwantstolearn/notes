@@ -1,10 +1,12 @@
 ---
-title: Now
+title: Now now now
 lang: en
 altLang: /now
 ---
+## Learning
 
-## Books
+
+## Reading
 How to try again - Steve Kamb
 <progress value="30" max="100"></progress>
 Dune - Frank Herbert

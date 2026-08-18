@@ -1,11 +1,11 @@
 ---
-title: Hiện tại đang...
+title: Bây giờ đang...
 lang: vi
 altLang: /now-en
 ---
-## 
+## Học
 
-## Sách
+## Đọc
 How to try again - Steve Kamb
 <progress value="30" max="100"></progress>
 Hậu duệ xứ cát - Frank Herbert
